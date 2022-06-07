@@ -1,0 +1,105 @@
+/* Set colors */
+:root{
+    --text-color: #6a7695;
+    --text-color-active: #17b978;
+    --nav-text-color: #051441;
+}
+/* Set font */
+body{
+    font-size: 16px;
+    font-family: 'Raleway';
+    font-weight: 600;
+}
+
+.header {
+  align-items: "center";
+  display: "flex";
+  line-height: 1.8rem;
+  padding: 8px 16px;
+  text-align: "center";
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+}
+a{
+    text-decoration: none;
+}
+.header-container{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.8rem;
+    margin: 0px 173.6px;
+    padding: 0px 15px;
+    text-align: left;
+    
+}
+.header-brand{
+    color: #051441;
+    font-size: 26px;
+    font-weight:900;
+    position: relative;
+    margin-right: 10px;
+    padding: 0.7rem 0;
+    line-height: 46.8px;
+}
+.header-brand span{
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    background-color: #17b978;
+}
+.header-menu{
+    align-items: center;
+    display: flex;
+    line-height: 1.8rem;
+    text-align: left;
+
+}
+.header-menu-item{
+    padding: 0.7rem 20px;
+    text-align: left;
+}
+.header-menu-item-text.active{
+    color:#17b978;
+}
+.header-menu-item-text.active::before{
+    content: "";
+    position: absolute;
+    bottom:0;
+    width: 100%;    
+}
+.header-menu-item-text{
+    color:#051441;
+    padding: 0px 0px 2px;
+    position: relative;
+    display: block;
+}
+.header-menu-item-text::before{
+    content: "";
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transform: translate(-50%, 0);
+    height:2px;
+    width:0;
+    z-index:-1;
+    transition: width 0.2s linear;
+}
+.header-menu-item-text:hover::before{
+    width: 100%;
+    background-color: #17b978;
+}
+.header-menu-item-text:not(hover)::before{
+    width: 0;
+    background-color: #17b978;
+}
