@@ -1,0 +1,72 @@
+:root {
+  --text-color: #6a7695;
+  --text-color-active: #17b978;
+  --nav-text-color: #051441;
+}
+.banner {
+  height: 736px;
+  display: flex;
+  padding: 0 10rem;
+}
+.banner-text {
+  width: 61.5%;
+  padding: 0 45px 0 48px;
+  margin-top: 185px;
+  margin-bottom: 90px;
+}
+.banner-text-subheading {
+  text-align: left;
+  text-transform: uppercase;
+  display: inline;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 25.2px;
+  color: var(--text-color-active);
+  letter-spacing: 2px;
+}
+.banner-text-slogan {
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 78px;
+  margin: 0 0 8px;
+  text-align: left;
+  color: #263b5e;
+}
+.banner-text-content {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  margin: 0 0 16px;
+  text-align: left;
+  color: #6a7695;
+}
+.banner-btn {
+  background-color: #17b978;
+  border: 1px solid #17b978;
+  border-radius: 40px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 18px;
+  padding: 16px 24px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 0.3s linear;
+}
+.banner-btn:hover {
+  color: black;
+}
+.banner-blank {
+  height: 100%;
+  width: 100%;
+}
+.banner-img {
+  height: 100%;
+  width: 60%;
+  z-index: -3;
+  position: absolute;
+  top: 3%;
+  right: 0;
+}
