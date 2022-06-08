@@ -1,0 +1,73 @@
+.services {
+  padding: 0px 12em;
+  display: block;
+  position: relative;
+}
+.services-title{
+    text-align: center;
+    padding: 48px 0;
+    margin: 48px -15px 0px;
+    color: #263b5e;
+}
+.services-title h2{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 75px;
+    margin-bottom: 1em;
+}
+.services-title p{
+    color:#17b978;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+.services-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.services-box{
+    width: 100%;
+    padding:0px 15px;
+}
+.services-block{
+    width: 100%;
+    height: 350px;
+    background-color: #f5f4fb;
+    
+    margin-bottom: 40px;
+    padding: 32px;
+}
+.services-block-icon{
+    margin-bottom: 30px;
+    height: 60px;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.services-block h3{
+    color: #263b5e;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    line-height: 26px;
+    text-align: center;
+    position: relative;
+}
+.services-block h3::after{
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: #17b978;
+    margin: 0 auto;
+}
+.services-block p{
+    font-family: 'Open Sans';
+    color: #6a7695;
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 400;
+}
