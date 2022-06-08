@@ -1,0 +1,21 @@
+.logos {
+  padding: 4em 10em 0;
+}
+.logos-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.logos-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.logos-item{
+    padding:0px 35px 0px 35px; 
+    max-width: 20%;
+}
+.logos-link {
+  line-height: 1.8em;
+}
