@@ -1,0 +1,76 @@
+.book {
+  padding: 112px 12em;
+  display: block;
+  position: relative;
+}
+.book-title {
+  text-align: center; 
+  color: #263b5e;
+}
+.book-title h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 75px;
+  margin-bottom: 1em;
+}
+.book-title p {
+  color: #17b978;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+.book-row{
+  width: 100%;
+  display: flex;
+}
+.book-column{
+  height: 360px;
+  width: 25%;
+  padding: 0px 15px 30px;
+}
+.book-img{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  align-items: center;
+  position: relative;
+}
+.book-overlay{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  top:0%;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  background-color: black;
+  transition: opacity 0.2s linear;
+}
+.book-overlay:hover{
+  opacity: 0.6;
+}
+.book-overlay-text{
+  position:absolute;
+  width: 100%;
+  height: 50%;
+  top:50%;
+  left: 0;
+  color: white;
+  padding: 24px;
+}
+.book-overlay-text h2{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.book-overlay-text p{
+  font-weight: 600;
+  font-size: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
