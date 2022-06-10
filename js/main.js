@@ -40,8 +40,26 @@ const activeMenuHeader = function () {
   };
   activeMenuItem();
 };
+const activeMenuChapterScroll = function () {
+  const sections = document.querySelectorAll(".chapter-page");
+  const menu_links = document.querySelectorAll(".chapter-menu ul li a");
+  const makeCurrent = (link) => menu_links[link].classList.add("current");
+  const removeCurrent = (link) => menu_links[link].classList.remove("current");
+  const removeAllCurrent = () =>[...Array(sections.length).keys()].forEach((link) => removeCurrent(link));
+  const sectionMargin = 1500;
+  let currentActive = 0;
+  window.addEventListener("scroll", () => {
+    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop + sectionMargin) - 1;
+    if (current < sections.length && current !== currentActive) {
+      removeAllCurrent();
+      currentActive = current;
+      makeCurrent(current);
+    }
+  });
+};
 document.addEventListener("DOMContentLoaded",function () {
     fixedHeader()
     activeMenuHeader();
+    activeMenuChapterScroll();
   },false
 );
