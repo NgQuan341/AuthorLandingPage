@@ -65,6 +65,7 @@
   display: flex;
   justify-content: space-between;
   padding: 24px 0px;
+    /* width: 4180px; */
 }
 .testimonial-slide-block{
   position: relative;
@@ -75,6 +76,16 @@
   box-shadow: rgb(0 0 0 / 24%) 0px 30px 33px -41px;
   border-radius: 4px;
   margin: 0px 15px 15px;
+  /* width: 4180px; */
+  /* transition: all 2s ease 0s; 
+  transform: translate3d(-760px, 0px, 0px);
+  transform: translate3d(-380px, 0px, 0px); */
+  /* transform: translate3d(-1140px, 0px, 0px);
+  transform: translate3d(-1520px, 0px, 0px);
+  transform: translate3d(-1900px, 0px, 0px);
+  transform: translate3d(-2280px, 0px, 0px);
+  transform: translate3d(-2660px, 0px, 0px); */
+
 }
 .testimonial-slide-row{
   display: flex;
