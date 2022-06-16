@@ -65,3 +65,73 @@
   top: 3%;
   right: 0;
 }
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .banner {
+    padding: 0px;
+  }
+  .banner-text {
+    width: 61.5%;
+    margin-top: 0px;
+  }
+  .banner-img {
+    top: 12%;
+  }
+}
+@media screen and (max-width: 993px) {
+  .banner {
+    padding: 0px;
+  }
+  .banner-text {
+    width: 100%;
+    margin-top: 185px;
+    margin-bottom: 90px;
+    text-align: center;
+  }
+  .banner-text-subheading,
+  .banner-text-slogan,
+  .banner-text-content {
+    text-align: center;
+  }
+  .banner-blank {
+    display: none;
+  }
+  .banner-img {
+    top: 15%;
+    width: 100%;
+    opacity: 0.6;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner {
+    padding: 0px;
+  }
+  .banner-text {
+    width: 100%;
+    margin-top: 185px;
+    margin-bottom: 90px;
+    padding: 0px 16px 0px 16px;
+    text-align: center;
+  }
+  .banner-text-subheading {
+    text-align: center;
+  }
+  .banner-text-slogan {
+    font-size: 40px;
+    line-height: 52px;
+    text-align: center;
+  }
+  .banner-text-content {
+    text-align: center;
+    color: black;
+  }
+  .banner-blank {
+    display: none;
+  }
+  .banner-img {
+    top: 35%;
+    width: 100%;
+    opacity: 0.6;
+  }
+}

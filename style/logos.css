@@ -12,10 +12,41 @@
   display: flex;
   flex-wrap: wrap;
 }
-.logos-item{
-    padding:0px 35px 0px 35px; 
-    max-width: 20%;
+.logos-item {
+  padding: 0px 35px 0px 35px;
+  max-width: 20%;
 }
 .logos-link {
   line-height: 1.8em;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .logos {
+    padding: 0px 32px;
+  }
+}
+@media screen and (max-width: 993px) {
+  .logos {
+    padding: 4em 15em 0px;
+  }
+  .logos-row {
+    display: block;
+  }
+  .logos-item {
+    padding: 0px 35px 40px 35px;
+    max-width: 100%;
+  }
+  .logos-link {
+    line-height: 1.8em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .logos {
+    padding: 0px 32px;
+  }
+  .logos-row {
+    display: block;
+    flex-wrap: nowrap;
+  }
 }

@@ -90,10 +90,16 @@ const activeMenuHeaderScroll = function () {
 };
 const activeSlideTestimonial = function () {
   const blocks = document.querySelectorAll(".testimonial-slide-block");
-  let transition = ` `;
-  [...blocks].forEach((block) => {
-    block.setAttribute("style", transition);
-  });
+  const preBtn = ``;
+  const nextBtn = ``;
+  let slideWidth = blocks[0].offsetWidth + 30;
+  console.log(slideWidth);
+  // [...blocks].forEach((block) => {
+  //   // block.addEventListener('click', function(){
+  //     block.style.transition = `transform .25s linear`
+  //     block.style.transform = `translateX(-${slideWidth}px)`
+  //   // })
+  // });
 };
 const clickMenuButton = function () {
   let btn = document.querySelector(".menu-btn");
@@ -101,10 +107,10 @@ const clickMenuButton = function () {
   let click = false;
   btn.addEventListener("click", function () {
     if (menu.style.maxHeight) {
-        menu.style.maxHeight = null;
-      } else {
-        menu.style.maxHeight = menu.scrollHeight + "px";
-      }
+      menu.style.maxHeight = null;
+    } else {
+      menu.style.maxHeight = menu.scrollHeight + "px";
+    }
   });
 };
 document.addEventListener(
@@ -114,7 +120,7 @@ document.addEventListener(
     activeMenuHeader();
     activeMenuChapterScroll();
     activeMenuHeaderScroll();
-    setInterval(activeSlideTestimonial(), 0);
+    activeSlideTestimonial();
     clickMenuButton();
   },
   false
