@@ -2,6 +2,7 @@
   padding: 7em 12em;
   display: block;
   position: relative;
+  overflow: visible;
 }
 .about-container {
   width: 100%;
@@ -11,13 +12,12 @@
 .about-row {
   display: flex;
 }
-
 .about-img {
   width: 50%;
   background-image: url(../images/xbg_1.webp);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  /* background-position: center center; */
 }
 .about-text {
   width: 50%;
@@ -57,7 +57,6 @@
   display: flex;
 }
 .about-counter-item{
-  height: 150px;
   width: 100%;
   padding: 0px 15px;
 }
@@ -67,6 +66,7 @@
   color:#6a7695;
   padding: 30px 20px;
   text-align: center;
+  height: 100%;
 }
 .about-counter-block strong{
   font-size: 34px;
@@ -76,4 +76,53 @@
 }
 .about-counter-block p{
   color: #6a7695;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .about {
+    padding: 7em 32px;
+  }
+  .about-text h2 {
+    margin-bottom: 24px;
+    line-height: 57px;
+    font-size: 38px;
+    font-weight: 700;
+    color: #263b5e;
+  }
+  .about-counter{
+    padding: 0px 32px;
+  }
+}
+@media screen and (max-width: 993px) {
+  .about {
+    padding: 7em 32px;
+  }
+  .about-img {
+    background-position: center center;
+  }
+  .about-counter{
+    padding: 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about {
+    padding: 7em 0px;
+  }
+  .about-img {
+    display: none;
+  }
+  .about-text{
+    width: 100%;
+    padding: 0px;
+  }
+  .about-counter{
+    padding: 0px;
+  }
+  .about-counter-row{
+    display: block;
+  }
+  .about-counter-item{
+    margin-bottom: 20px;
+  }
 }

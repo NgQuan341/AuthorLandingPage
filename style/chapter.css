@@ -54,25 +54,80 @@
   width: 100%;
   padding: 0px 15px;
 }
-.chapter-page{
+.chapter-page {
+  width: 100%;
+  background-color: #f5f4fb;
+  border-radius: 5px;
+  margin-bottom: 112px;
+  padding: 30px;
+}
+.chapter-page h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 45px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #263b5e;
+}
+.chapter-page p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  margin-bottom: 16px;
+  text-align: left;
+  color: #6a7695;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .chapter {
+    padding: 48px 36px 0px;
+    display: block;
+    position: relative;
+  }
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 767px) {
+  .chapter {
+    padding: 48px 15px 0px;
+    display: block;
+    position: relative;
+  }
+  .chapter-container {
+    display: block;
+  }
+  .chapter-menu {
     width: 100%;
-    background-color: #f5f4fb;
-    border-radius: 5px;
-    margin-bottom: 112px;
-    padding: 30px;
+    margin: 0px;
+  }
+  .chapter-heading {
+    font-size: 38px;
+    line-height: 1.5em;
+  }
+  .chapter-collection {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+  }
 }
-.chapter-page h2{
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 45px;
-    margin-bottom: 30px;
-    text-align: left;
-    color: #263b5e;
-}
-.chapter-page p{
-    font-family: 'Open Sans';
-    font-weight: 400;
-    margin-bottom: 16px;
-    text-align: left;
-    color: #6a7695;
+@media screen and (max-width: 425px) {
+  .chapter {
+    padding: 48px 15px 0px;
+    display: block;
+    position: relative;
+  }
+  .chapter-container {
+    display: block;
+  }
+  .chapter-menu {
+    width: 100%;
+    margin: 0px;
+  }
+  .chapter-heading {
+    font-size: 38px;
+    line-height: 1.5em;
+  }
+  .chapter-collection {
+    margin: auto;
+  }
 }

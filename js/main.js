@@ -42,22 +42,26 @@ const activeMenuHeader = function () {
 };
 const activeMenuChapterScroll = function () {
   const sections = document.querySelectorAll(".chapter-page");
+  const sectionLenght = sections.length;
   const menu_links = document.querySelectorAll(".chapter-menu ul li a");
   const makeCurrent = (link) => menu_links[link].classList.add("current");
   const removeCurrent = (link) => menu_links[link].classList.remove("current");
-  const removeAllCurrent = () =>
-    [...Array(sections.length).keys()].forEach((link) => removeCurrent(link));
-  const sectionMargin = 1500;
+  const removeAllCurrent = () => [...Array(sections.length).keys()].forEach((link) => removeCurrent(link));
   let currentActive = 0;
   window.addEventListener("scroll", () => {
-    const current =
-      sections.length -
-      [...sections]
-        .reverse()
-        .findIndex(
-          (section) => window.scrollY >= section.offsetTop + sectionMargin
-        ) -
-      1;
+    let screenWidth = screen.width
+    let sectionMargin = 1500;
+    if(screenWidth<=1200 && screenWidth>768){
+      sectionMargin = 1500;
+    }
+    else if(screenWidth<=768){
+      sectionMargin = 2300;
+    }
+    else if(screenWidth<768){
+      removeAllCurrent();
+    }
+    console.log(screenWidth, sectionMargin);
+    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop + sectionMargin) - 1;
     if (current < sections.length && current !== currentActive) {
       removeAllCurrent();
       currentActive = current;
@@ -93,7 +97,6 @@ const activeSlideTestimonial = function () {
   const preBtn = ``;
   const nextBtn = ``;
   let slideWidth = blocks[0].offsetWidth + 30;
-  console.log(slideWidth);
   // [...blocks].forEach((block) => {
   //   // block.addEventListener('click', function(){
   //     block.style.transition = `transform .25s linear`
