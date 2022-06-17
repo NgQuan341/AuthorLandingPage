@@ -60,7 +60,6 @@ const activeMenuChapterScroll = function () {
     else if(screenWidth<768){
       removeAllCurrent();
     }
-    console.log(screenWidth, sectionMargin);
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop + sectionMargin) - 1;
     if (current < sections.length && current !== currentActive) {
       removeAllCurrent();
@@ -117,8 +116,9 @@ const clickMenuButton = function () {
   });
 };
 const fixOverflowClip = function (){
-  let screenWidth = screen.width
-  if(screenWidth<=828){
+  let screenWidth = screen.width;
+  let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+  if(screenWidth<=828 && Boolean(isSafari)){
     document.querySelector('html').style.overflowX='hidden'
     document.querySelector('body').style.overflowX='hidden'
   }
