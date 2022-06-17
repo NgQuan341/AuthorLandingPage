@@ -58,3 +58,37 @@
 .form-btn:hover {
     color: black;
   }
+
+  /* Responsive */
+@media screen and (max-width: 1200px) {
+  .form-contact {
+    padding: 0px 36px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .form-contact {
+    padding: 0px 36px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .form-contact {
+    padding: 0px 15px;
+  }
+  .form-contact-container {
+    flex-direction: column-reverse;
+    padding: 0px;
+  }
+  .form-map {
+    width: 100%;
+  }
+  .form {
+    width: 100%;
+    padding: 20px;
+    background-color: #f5f4fb;
+  }
+  .form-btn{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
