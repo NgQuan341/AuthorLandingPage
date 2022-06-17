@@ -120,6 +120,7 @@ const fixOverflowClip = function (){
   let screenWidth = screen.width
   if(screenWidth<=828){
     document.querySelector('html').style.overflowX='hidden'
+    document.querySelector('body').style.overflowX='hidden'
   }
 }
 document.addEventListener(
