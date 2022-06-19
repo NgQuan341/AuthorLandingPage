@@ -64,6 +64,7 @@
 .testimonial-slide-container {
   overflow: hidden;
   position: relative;
+  width: 684px;
 }
 .testimonial-slide-main {
   display: flex;
@@ -128,4 +129,18 @@
 }
 .btn-active {
   background-color: #17b978;
+}
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .testimonial-container {
+    padding: 0px 36px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .testimonial-container {
+    padding: 0px 36px;
+  }
+  .testimonial-slide-main{
+      width: 4000px;
+  }
 }
