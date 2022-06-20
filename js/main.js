@@ -42,7 +42,6 @@ const activeMenuHeader = function () {
 };
 const activeMenuChapterScroll = function () {
   const sections = document.querySelectorAll(".chapter-page");
-  const sectionLenght = sections.length;
   const menu_links = document.querySelectorAll(".chapter-menu ul li a");
   const makeCurrent = (link) => menu_links[link].classList.add("current");
   const removeCurrent = (link) => menu_links[link].classList.remove("current");
@@ -96,12 +95,32 @@ const activeSlideTestimonial = function () {
   const preBtn = ``;
   const nextBtn = ``;
   let slideWidth = blocks[0].offsetWidth + 30;
-  // [...blocks].forEach((block) => {
-  //   // block.addEventListener('click', function(){
-  //     block.style.transition = `transform .25s linear`
-  //     block.style.transform = `translateX(-${slideWidth}px)`
-  //   // })
-  // });
+  let widthTransform = blocks[0].offsetWidth + 30;
+  let indexSlide = 0
+  
+  document.querySelector('.testimonial-dots .btn-active').addEventListener('click', function(){
+    console.log(indexSlide, widthTransform);
+    [...blocks].forEach((block) => {
+      block.style.transition = `transform .25s linear`
+      block.style.transform = `translateX(-${widthTransform}px)`;
+      
+    })
+    if(indexSlide>=1){
+      blocks[indexSlide-1].style.left = `${slideWidth*blocks.length}px`
+    }
+   
+    if(indexSlide == blocks.length){
+      [...blocks].forEach((block) => {
+        block.removeAttribute('style')
+      })
+      indexSlide=0;
+      widthTransform = blocks[0].offsetWidth + 30;
+    }
+    else{
+      indexSlide++;
+      widthTransform = widthTransform + slideWidth
+    }
+  });
 };
 const clickMenuButton = function () {
   let btn = document.querySelector(".menu-btn");
