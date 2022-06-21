@@ -90,37 +90,87 @@ const activeMenuHeaderScroll = function () {
     }
   });
 };
-const activeSlideTestimonial = function () {
+const handleTestimonials = function () {
   const blocks = document.querySelectorAll(".testimonial-slide-block");
-  const preBtn = ``;
-  const nextBtn = ``;
+  const nextBtn = document.querySelector('.testimonial-dots .btn-next');
+  const preBtn = document.querySelector('.testimonial-dots .btn-pre')
   let slideWidth = blocks[0].offsetWidth + 30;
-  let widthTransform = blocks[0].offsetWidth + 30;
-  let indexSlide = 0
-  
-  document.querySelector('.testimonial-dots .btn-active').addEventListener('click', function(){
+  let marginSlide = 0;
+  if(screen.width<=992 && screen.width>767){
+    marginSlide = slideWidth/2
+  }
+  else{
+    marginSlide = 0;
+  }
+  let indexSlide = 0;
+  let widthTransform = slideWidth*(indexSlide+1) + marginSlide;
+  let screenWidth = screen.width;  
+  let arrayIndex = [];
+  [...blocks].forEach((block, index)=>{
+    arrayIndex.push(index)
+  })
+  nextBtn.addEventListener('click', function(){
     console.log(indexSlide, widthTransform);
+    
+    if(screenWidth != screen.width){
+      screenWidth =  screen.width;
+      slideWidth = blocks[0].offsetWidth + 30;
+      if(screen.width<=992 && screen.width>767){
+        marginSlide = slideWidth/2
+      }
+      else{
+        marginSlide = 0;
+      }
+      widthTransform = slideWidth + marginSlide;
+      indexSlide = 0;
+    };
     [...blocks].forEach((block) => {
       block.style.transition = `transform .25s linear`
       block.style.transform = `translateX(-${widthTransform}px)`;
-      
     })
     if(indexSlide>=1){
-      blocks[indexSlide-1].style.left = `${slideWidth*blocks.length}px`
+      // xử lý khi slide không bấm từng slide
+      let vt = arrayIndex.indexOf(indexSlide);
+      if(vt>1){
+        for(i = 1; i<vt; i++){
+          blocks[i-1].style.left = `${slideWidth*blocks.length}px`;
+          arrayIndex.push(arrayIndex.shift())
+        }
+      }
+      else{
+        // slide chuyển từng
+        blocks[indexSlide-1].style.left = `${slideWidth*blocks.length}px`;
+        arrayIndex.push(arrayIndex.shift())
+      }
     }
-   
     if(indexSlide == blocks.length){
+      // trả về trạng thái ban đầu của cả testimonial
       [...blocks].forEach((block) => {
         block.removeAttribute('style')
       })
       indexSlide=0;
-      widthTransform = blocks[0].offsetWidth + 30;
+      widthTransform = slideWidth*(indexSlide+1) + marginSlide;
     }
     else{
       indexSlide++;
-      widthTransform = widthTransform + slideWidth
+      widthTransform = slideWidth*(indexSlide+1) + marginSlide;
+      console.log(indexSlide,widthTransform);
     }
   });
+  preBtn.addEventListener('click', function(){
+    indexSlide--;
+    widthTransform = widthTransform - slideWidth-slideWidth;
+    console.log(indexSlide,widthTransform);
+    [...blocks].forEach((block) => {
+      block.style.transition = `transform .25s linear`
+      block.style.transform = `translateX(-${widthTransform}px)`;
+    })
+    indexSlide++;
+    widthTransform = slideWidth*(indexSlide) + marginSlide;
+    console.log(indexSlide,widthTransform);
+
+  })
+  
 };
 const clickMenuButton = function () {
   let btn = document.querySelector(".menu-btn");
@@ -150,7 +200,7 @@ document.addEventListener(
     activeMenuHeader();
     activeMenuChapterScroll();
     activeMenuHeaderScroll();
-    activeSlideTestimonial();
+    handleTestimonials();
     clickMenuButton();
   },
   false
