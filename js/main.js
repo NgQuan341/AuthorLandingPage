@@ -131,14 +131,14 @@ const handleTestimonials = function () {
     activeDot(arrayIndex[0])
   });
   // click dot
-  [...dots].forEach((d, index)=>{
-    d.addEventListener('click', function(){
-      while(index != arrayIndex[0]){
-        nextSlide(blocks, slideWidth, main, 250, marginSlide, arrayIndex)
-        activeDot(arrayIndex[0])
-      }
-    })
-  })
+  // [...dots].forEach((d, index)=>{
+  //   d.addEventListener('click', function(){
+  //     while(index != arrayIndex[0]){
+  //       nextSlide(blocks, slideWidth, main, 250, marginSlide, arrayIndex)
+  //       activeDot(arrayIndex[0])
+  //     }
+  //   })
+  // })
 };
 const nextSlide = function(blocks, slideWidth, main, time, marginSlide, arrayIndex){
   setTimeout(function () {
