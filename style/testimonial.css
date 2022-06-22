@@ -120,9 +120,9 @@
 .testimonial-dots {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
-.testimonial-dots button {
+.testimonial-dots .dots button {
   height: 10px;
   width: 10px;
   margin: 5px;
@@ -130,6 +130,20 @@
 }
 .btn-active {
   background-color: #17b978;
+}
+.testimonial-dots .btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 20%;
+}
+.testimonial-dots .btn {
+  color: #17b978;
+}
+.testimonial-dots .btn-next {
+  margin-left: 15px;
+}
+.testimonial-dots .btn-pre {
+  margin-right: 15px;
 }
 /* Responsive */
 @media screen and (max-width: 1200px) {

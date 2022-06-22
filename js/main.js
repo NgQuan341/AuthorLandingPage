@@ -45,21 +45,27 @@ const activeMenuChapterScroll = function () {
   const menu_links = document.querySelectorAll(".chapter-menu ul li a");
   const makeCurrent = (link) => menu_links[link].classList.add("current");
   const removeCurrent = (link) => menu_links[link].classList.remove("current");
-  const removeAllCurrent = () => [...Array(sections.length).keys()].forEach((link) => removeCurrent(link));
+  const removeAllCurrent = () =>
+    [...Array(sections.length).keys()].forEach((link) => removeCurrent(link));
   let currentActive = 0;
   window.addEventListener("scroll", () => {
-    let screenWidth = screen.width
+    let screenWidth = screen.width;
     let sectionMargin = 1500;
-    if(screenWidth<=1200 && screenWidth>768){
+    if (screenWidth <= 1200 && screenWidth > 768) {
       sectionMargin = 1500;
-    }
-    else if(screenWidth<=768){
+    } else if (screenWidth <= 768) {
       sectionMargin = 2300;
-    }
-    else if(screenWidth<768){
+    } else if (screenWidth < 768) {
       removeAllCurrent();
     }
-    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop + sectionMargin) - 1;
+    const current =
+      sections.length -
+      [...sections]
+        .reverse()
+        .findIndex(
+          (section) => window.scrollY >= section.offsetTop + sectionMargin
+        ) -
+      1;
     if (current < sections.length && current !== currentActive) {
       removeAllCurrent();
       currentActive = current;
@@ -91,87 +97,97 @@ const activeMenuHeaderScroll = function () {
   });
 };
 const handleTestimonials = function () {
-  const blocks = document.querySelectorAll(".testimonial-slide-block");
-  const nextBtn = document.querySelector('.testimonial-dots .btn-next');
-  const preBtn = document.querySelector('.testimonial-dots .btn-pre')
+  const main = document.querySelector(".testimonial-slide-main ");
+  const nextBtn = document.querySelector(".testimonial-dots .btn-next");
+  const preBtn = document.querySelector(".testimonial-dots .btn-pre");
+  const dots = document.querySelectorAll(".testimonial-dots .dots button");
+  let blocks = document.querySelectorAll(".testimonial-slide-block");
   let slideWidth = blocks[0].offsetWidth + 30;
   let marginSlide = 0;
-  if(screen.width<=992 && screen.width>767){
-    marginSlide = slideWidth/2
-  }
-  else{
-    marginSlide = 0;
-  }
-  let indexSlide = 0;
-  let widthTransform = slideWidth*(indexSlide+1) + marginSlide;
-  let screenWidth = screen.width;  
   let arrayIndex = [];
   [...blocks].forEach((block, index)=>{
     arrayIndex.push(index)
   })
-  nextBtn.addEventListener('click', function(){
-    console.log(indexSlide, widthTransform);
-    
-    if(screenWidth != screen.width){
-      screenWidth =  screen.width;
-      slideWidth = blocks[0].offsetWidth + 30;
-      if(screen.width<=992 && screen.width>767){
-        marginSlide = slideWidth/2
+  activeDot(arrayIndex[0])
+  // cho slide chạy tự động
+  setInterval(function () {
+    marginSlide = checkScreenWidth(blocks)[0]
+    slideWidth = checkScreenWidth(blocks)[1]
+    nextSlide(blocks, slideWidth, main, 700, marginSlide, arrayIndex)
+    activeDot(arrayIndex[0])
+  }, 4000);
+  // slide tiếp theo
+  nextBtn.addEventListener("click", function () {
+    marginSlide = checkScreenWidth(blocks)[0]
+    slideWidth = checkScreenWidth(blocks)[1]
+    nextSlide(blocks, slideWidth, main, 250, marginSlide, arrayIndex)
+    activeDot(arrayIndex[0])
+  });
+  // lùi lại một slide
+  preBtn.addEventListener("click", function () {
+    marginSlide = checkScreenWidth(blocks)[0]
+    slideWidth = checkScreenWidth(blocks)[1]
+    previousSlide(blocks, slideWidth, main, marginSlide, arrayIndex)
+    activeDot(arrayIndex[0])
+  });
+  // click dot
+  [...dots].forEach((d, index)=>{
+    d.addEventListener('click', function(){
+      while(index != arrayIndex[0]){
+        nextSlide(blocks, slideWidth, main, 250, marginSlide, arrayIndex)
+        activeDot(arrayIndex[0])
       }
-      else{
-        marginSlide = 0;
-      }
-      widthTransform = slideWidth + marginSlide;
-      indexSlide = 0;
-    };
-    [...blocks].forEach((block) => {
-      block.style.transition = `transform .25s linear`
-      block.style.transform = `translateX(-${widthTransform}px)`;
     })
-    if(indexSlide>=1){
-      // xử lý khi slide không bấm từng slide
-      let vt = arrayIndex.indexOf(indexSlide);
-      if(vt>1){
-        for(i = 1; i<vt; i++){
-          blocks[i-1].style.left = `${slideWidth*blocks.length}px`;
-          arrayIndex.push(arrayIndex.shift())
-        }
-      }
-      else{
-        // slide chuyển từng
-        blocks[indexSlide-1].style.left = `${slideWidth*blocks.length}px`;
-        arrayIndex.push(arrayIndex.shift())
-      }
-    }
-    if(indexSlide == blocks.length){
-      // trả về trạng thái ban đầu của cả testimonial
-      [...blocks].forEach((block) => {
-        block.removeAttribute('style')
-      })
-      indexSlide=0;
-      widthTransform = slideWidth*(indexSlide+1) + marginSlide;
+  })
+};
+const nextSlide = function(blocks, slideWidth, main, time, marginSlide, arrayIndex){
+  setTimeout(function () {
+    main.append(blocks[0]);
+    [...blocks].forEach((block) => {
+      block.removeAttribute("style");
+    });
+  }, time);
+  [...blocks].forEach((block) => {
+    block.style.transition = `transform .${time}s linear`;
+    block.style.transform = `translateX(-${Number(slideWidth+marginSlide)}px)`;
+  });
+  arrayIndex.push(arrayIndex.shift())
+  blocks = document.querySelectorAll(".testimonial-slide-block");
+}
+const previousSlide = function(blocks, slideWidth, main, marginSlide, arrayIndex){
+  console.log(slideWidth+marginSlide, marginSlide);
+  [...blocks].forEach((block) => {
+    block.removeAttribute("style");
+    block.style.transform = `translateX(-${Number(slideWidth+marginSlide)}px)`;
+  });
+  blocks = document.querySelectorAll(".testimonial-slide-block");
+  main.prepend(blocks[blocks.length - 1]);
+  setTimeout(function () {
+    [...blocks].forEach((block) => {
+      block.style.transition = `transform .25s linear`;
+      block.style.transform = `translateX(-${marginSlide}px)`;
+    });
+    arrayIndex.unshift(arrayIndex.pop())
+  }, 250);
+}
+const checkScreenWidth = function(blocks){
+  let marginSlide = 0;
+  let slideWidth = blocks[0].offsetWidth + 30;
+    if(screen.width<=992 && screen.width>767){
+      marginSlide = slideWidth/2
     }
     else{
-      indexSlide++;
-      widthTransform = slideWidth*(indexSlide+1) + marginSlide;
-      console.log(indexSlide,widthTransform);
+      marginSlide = 0;
     }
-  });
-  preBtn.addEventListener('click', function(){
-    indexSlide--;
-    widthTransform = widthTransform - slideWidth-slideWidth;
-    console.log(indexSlide,widthTransform);
-    [...blocks].forEach((block) => {
-      block.style.transition = `transform .25s linear`
-      block.style.transform = `translateX(-${widthTransform}px)`;
-    })
-    indexSlide++;
-    widthTransform = slideWidth*(indexSlide) + marginSlide;
-    console.log(indexSlide,widthTransform);
-
+    return [marginSlide, slideWidth]
+}
+const activeDot = function (index){
+  const dots = document.querySelectorAll(".testimonial-dots .dots button");
+  [...dots].forEach(d=>{
+    d.classList.remove('btn-active')
   })
-  
-};
+  dots[index].classList.add('btn-active')
+}
 const clickMenuButton = function () {
   let btn = document.querySelector(".menu-btn");
   let menu = document.querySelector(".header-menu");
@@ -184,18 +200,25 @@ const clickMenuButton = function () {
     }
   });
 };
-const fixOverflowClip = function (){
+const fixOverflowClip = function () {
   let screenWidth = screen.width;
-  let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-  if(screenWidth<=828 && Boolean(isSafari)){
-    document.querySelector('html').style.overflowX='hidden'
-    document.querySelector('body').style.overflowX='hidden'
+  let isSafari =
+    /constructor/i.test(window.HTMLElement) ||
+    (function (p) {
+      return p.toString() === "[object SafariRemoteNotification]";
+    })(
+      !window["safari"] ||
+        (typeof safari !== "undefined" && safari.pushNotification)
+    );
+  if (screenWidth <= 828 && Boolean(isSafari)) {
+    document.querySelector("html").style.overflowX = "hidden";
+    document.querySelector("body").style.overflowX = "hidden";
   }
-}
+};
 document.addEventListener(
   "DOMContentLoaded",
   function () {
-    fixOverflowClip()
+    fixOverflowClip();
     fixedHeader();
     activeMenuHeader();
     activeMenuChapterScroll();
