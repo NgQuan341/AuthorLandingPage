@@ -8,6 +8,7 @@ import Services from './components/services'
 import Testimonial from './components/testimonial'
 import Books from './components/books'
 import Author from './components/author'
+import Contact from './components/contact'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
        <Testimonial/>
        <Books/>
        <Author/>
+       <Contact/>
        <Footer/>
     </div>
   )

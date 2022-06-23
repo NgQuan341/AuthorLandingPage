@@ -1,0 +1,130 @@
+.contact {
+  padding: 0px 12em;
+  display: block;
+  position: relative;
+}
+.contact_title {
+  padding: 0px 100px;
+  margin: 112px -15px 0px;
+  color: #263b5e;
+  margin-bottom: 48px;
+}
+.contact_title {
+  padding: 0 15px 15px;
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+.contact_title h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 75px;
+  margin-bottom: 24px;
+}
+.contact_title p {
+  color: #6a7695;
+  font-weight: 400;
+  font-family: "Open Sans";
+}
+
+.contact_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.contact_box {
+  width: 25%;
+  padding: 0px 15px;
+}
+.contact_block {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f4fb;
+  padding: 24px;
+}
+.contact_block_icon {
+  border-radius: 50%;
+  display: flex;
+  background-color: #17b978;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 30px;
+}
+.contact_block_icon i {
+  color: #ffffff;
+}
+.contact_block h3 {
+  color: #263b5e;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 26px;
+  text-align: center;
+  position: relative;
+}
+.contact_block p {
+  font-family: "Open Sans";
+  color: #6a7695;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+.contact_block a {
+  display: block;
+  font-family: "Open Sans";
+  color: #17b978;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .contact {
+    padding: 0px 36px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .contact {
+    padding: 0px 36px;
+  }
+  .contact_content {
+    flex-wrap: wrap;
+  }
+  .contact_box {
+    width: 50%;
+    padding: 15px 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact {
+    padding: 0px 15px;
+  }
+  .contact_content {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact_box {
+    width: 100%;
+    padding: 15px 0px;
+  }
+  .contact_title {
+    width: 100%;
+  }
+  .contact_title h2 {
+    font-size: 38px;
+  }
+  .contact_title p {
+    color: #6a7695;
+    font-weight: 400;
+    font-family: "Open Sans";
+  }
+}
