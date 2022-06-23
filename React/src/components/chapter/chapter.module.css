@@ -1,0 +1,133 @@
+.chapter {
+  padding: 48px 12em 0px;
+  display: block;
+  position: relative;
+}
+.chapter_heading {
+  text-align: center;
+  margin: 48px 0px 24px;
+  color: #263b5e;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 75px;
+}
+.chapter_container {
+  display: flex;
+  justify-content: space-between;
+}
+.chapter_menu {
+  width: 35%;
+  margin: 0px 15px;
+}
+.chapter_menu ul {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 180px;
+}
+.chapter_menu ul li {
+  margin-bottom: 15px;
+}
+.chapter_menu ul li a {
+  color: #263b5e;
+  font-family: "Open Sans";
+  font-weight: 700;
+  transition: all 0.2s linear;
+}
+.chapter_menu ul li a.current::after {
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  width: 20px;
+  height: 2px;
+  content: "";
+  transform: translateY(-50%);
+  background: #17b978;
+}
+.chapter_menu ul li a.current {
+  color: #17b978;
+  margin-left: 20px;
+  position: relative;
+  transition: all 0.2s linear;
+}
+.chapter_collection {
+  height: 100%;
+  width: 100%;
+  padding: 0px 15px;
+}
+.chapter_page {
+  width: 100%;
+  background-color: #f5f4fb;
+  border-radius: 5px;
+  margin-bottom: 112px;
+  padding: 30px;
+}
+.chapter_page h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 45px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #263b5e;
+}
+.chapter_page p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  margin-bottom: 16px;
+  text-align: left;
+  color: #6a7695;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .chapter {
+    padding: 48px 36px 0px;
+    display: block;
+    position: relative;
+  }
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 767px) {
+  .chapter {
+    padding: 48px 15px 0px;
+    display: block;
+    position: relative;
+  }
+  .chapter_container {
+    display: block;
+  }
+  .chapter_menu {
+    width: 100%;
+    margin: 0px;
+  }
+  .chapter_heading {
+    font-size: 38px;
+    line-height: 1.5em;
+  }
+  .chapter_collection {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .chapter {
+    padding: 48px 15px 0px;
+    display: block;
+    position: relative;
+  }
+  .chapter_container {
+    display: block;
+  }
+  .chapter_menu {
+    width: 100%;
+    margin: 0px;
+  }
+  .chapter_heading {
+    font-size: 38px;
+    line-height: 1.5em;
+  }
+  .chapter_collection {
+    margin: auto;
+  }
+}
