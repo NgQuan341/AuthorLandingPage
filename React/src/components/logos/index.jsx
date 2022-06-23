@@ -4,32 +4,32 @@ import logoStyle from './logos.module.css'
 const Logos = () => {
   return (
     <>
-      <section class={logoStyle.logos}>
-        <div class={logoStyle.logos_container}>
-          <div class={logoStyle.logos_row}>
-            <div class={logoStyle.logos_item}>
-              <a href="" class={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-1.webp" alt="" srcset="" />
+      <section className={logoStyle.logos}>
+        <div className={logoStyle.logos_container}>
+          <div className={logoStyle.logos_row}>
+            <div className={logoStyle.logos_item}>
+              <a href="" className={logoStyle.logos_link}>
+                <img src="./assets/images/xpartner-1.webp" alt="" />
               </a>
             </div>
-            <div class={logoStyle.logos_item}>
-              <a href="" class={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-2.webp" alt="" srcset="" />
+            <div className={logoStyle.logos_item}>
+              <a href="" className={logoStyle.logos_link}>
+                <img src="./assets/images/xpartner-2.webp" alt="" />
               </a>
             </div>
-            <div class={logoStyle.logos_item}>
-              <a href="" class={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-3.webp" alt="" srcset="" />
+            <div className={logoStyle.logos_item}>
+              <a href="" className={logoStyle.logos_link}>
+                <img src="./assets/images/xpartner-3.webp" alt="" />
               </a>
             </div>
-            <div class={logoStyle.logos_item}>
-              <a href="" class={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-4.webp" alt="" srcset="" />
+            <div className={logoStyle.logos_item}>
+              <a href="" className={logoStyle.logos_link}>
+                <img src="./assets/images/xpartner-4.webp" alt="" />
               </a>
             </div>
-            <div class={logoStyle.logos_item}>
-              <a href="" class={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-5.webp" alt="" srcset="" />
+            <div className={logoStyle.logos_item}>
+              <a href="" className={logoStyle.logos_link}>
+                <img src="./assets/images/xpartner-5.webp" alt="" />
               </a>
             </div>
           </div>

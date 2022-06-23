@@ -1,0 +1,127 @@
+.about {
+    padding: 7em 12em;
+    display: block;
+    position: relative;
+    overflow: visible;
+  }
+  .about_container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .about_row {
+    display: flex;
+  }
+  .about_img {
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center center; */
+  }
+  .about_text {
+    width: 50%;
+    padding-left: 3em;
+    text-align: left;
+  }
+  .about_text h2 {
+    margin-bottom: 1.5em;
+    line-height: 75px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #263b5e;
+  }
+  .about_text h4 {
+    margin-bottom: 1em;
+    line-height: 1.8em;
+    font-size: 20px;
+    font-weight: 700;
+    color: #263b5e;
+  }
+  .about_text p {
+    margin-bottom: 1em;
+    line-height: 1.8em;
+    color: #6a7695;
+    font-weight: 400;
+  }
+  
+  .about_counter{
+    padding: 0px 12em;
+    display: block;
+    position: relative;
+  }
+  .about_counter_container{
+    width: 100%;
+  }
+  .about_counter_row{
+    display: flex;
+  }
+  .about_counter_item{
+    width: 100%;
+    padding: 0px 15px;
+  }
+  .about_counter_block{
+    font-family: 'Open Sans';
+    background-color: #f5f4fb;
+    color:#6a7695;
+    padding: 30px 20px;
+    text-align: center;
+    height: 100%;
+  }
+  .about_counter_block strong{
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 61.2px;
+    color: #263b5e;
+  }
+  .about_counter_block p{
+    color: #6a7695;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 1200px) {
+    .about {
+      padding: 7em 32px;
+    }
+    .about_text h2 {
+      margin-bottom: 24px;
+      line-height: 57px;
+      font-size: 38px;
+      font-weight: 700;
+      color: #263b5e;
+    }
+    .about_counter{
+      padding: 0px 32px;
+    }
+  }
+  @media screen and (max-width: 993px) {
+    .about {
+      padding: 7em 32px;
+    }
+    .about_img {
+      background-position: center center;
+    }
+    .about_counter{
+      padding: 32px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .about {
+      padding: 7em 0px;
+    }
+    .about_img {
+      display: none;
+    }
+    .about_text{
+      width: 100%;
+      padding: 0px;
+    }
+    .about_counter{
+      padding: 0px;
+    }
+    .about_counter_row{
+      display: block;
+    }
+    .about_counter_item{
+      margin-bottom: 20px;
+    }
+  }
