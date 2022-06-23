@@ -86,14 +86,14 @@
   .footer {
     padding: 112px 0px;
   }
-  .footer-row {
+  .footer_row {
     flex-direction: column;
   }
-  .footer-social-media {
+  .footer_social_media {
     justify-content: start;
     margin-bottom: 24px;
   }
-  .footer-social-media-btn {
+  .footer_social_media_btn {
     margin-right: 15px;
   }
 }
