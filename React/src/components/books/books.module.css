@@ -1,0 +1,97 @@
+.book {
+  padding: 112px 12em;
+  display: block;
+  position: relative;
+}
+.book_title {
+  text-align: center;
+  color: #263b5e;
+}
+.book_title h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 75px;
+  margin-bottom: 1em;
+}
+.book_title p {
+  color: #17b978;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+.book_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 15px;
+}
+.book_column {
+  height: 360px;
+  width: 100%;
+}
+.book_img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  align-items: center;
+  position: relative;
+}
+.book_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  background-color: black;
+  transition: opacity 0.2s linear;
+}
+.book_overlay:hover {
+  opacity: 0.6;
+}
+.book_overlay_text {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  left: 0;
+  color: white;
+  padding: 24px;
+}
+.book_overlay_text h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.book_overlay_text p {
+  font-weight: 600;
+  font-size: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .book {
+    padding: 112px 36px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .book {
+    padding: 112px 36px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .book {
+    padding: 112px 0px;
+  }
+  .book_container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+}

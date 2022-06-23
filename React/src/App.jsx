@@ -6,6 +6,7 @@ import About from './components/about'
 import Chapter from './components/chapter'
 import Services from './components/services'
 import Testimonial from './components/testimonial'
+import Books from './components/books'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
        <Chapter/>
        <Services/>
        <Testimonial/>
+       <Books/>
        <Footer/>
     </div>
   )
