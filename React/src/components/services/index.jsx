@@ -1,18 +1,18 @@
 import React from 'react'
-import serviceStyle from './services.module.css'
+import style from './services.module.css'
 
 const Services = () => {
   return (
     <>
-    <section className={serviceStyle.services} id="services">
-        <div className={serviceStyle.services_title}>
+    <section className={style.services} id="services">
+        <div className={style.services_title}>
           <p>services</p>
           <h2>Services</h2>
         </div>
-        <div className={serviceStyle.services_content}>
-          <div className={serviceStyle.services_box}>
-            <div className={serviceStyle.services_block}>
-              <div className={serviceStyle.services_block_icon}>
+        <div className={style.services_content}>
+          <div className={style.services_box}>
+            <div className={style.services_block}>
+              <div className={style.services_block_icon}>
                 <img src="./assets/images/user-experience.png" alt=""  />
               </div>
               <h3>Experience</h3>
@@ -22,9 +22,9 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className={serviceStyle.services_box}>
-            <div className={serviceStyle.services_block}>
-              <div className={serviceStyle.services_block_icon}>
+          <div className={style.services_box}>
+            <div className={style.services_block}>
+              <div className={style.services_block_icon}>
                 <img src="./assets/images/network.png" alt=""  />
               </div>
               <h3>Marketing Goals</h3>
@@ -34,9 +34,9 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className={serviceStyle.services_box}>
-            <div className={serviceStyle.services_block}>
-              <div className={serviceStyle.services_block_icon}>
+          <div className={style.services_box}>
+            <div className={style.services_block}>
+              <div className={style.services_block_icon}>
                 <img src="./assets/images/innovation.png" alt="" />
               </div>
               <h3>Targetting Vission</h3>

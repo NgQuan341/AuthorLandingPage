@@ -1,14 +1,18 @@
-import React from "react";
-import aboutStyle from './about.module.css'
+import React, { useState } from "react";
+import style from './about.module.css'
+import AboutCounter from "./AboutCounter";
 
 const About = () => {
+  const [paragraph,setParagraph] = useState({
+    backgroundImage:`./assets/images/xbg_1.webp`
+  })
   return (
     <>
-      <section className={`${aboutStyle.about} section`} id="about">
-        <div className={aboutStyle.about_container}>
-          <div className={aboutStyle.about_row}>
-            <div className={aboutStyle.about_img} style={{backgroundImage: `url(./assets/images/xbg_1.webp)`}}></div>
-            <div className={aboutStyle.about_text}>
+      <section className={`${style.about} section`} id="about">
+        <div className={style.about_container}>
+          <div className={style.about_row}>
+            <div className={style.about_img} style={{backgroundImage: `url(${paragraph.backgroundImage})`}}></div>
+            <div className={style.about_text}>
               <h2>About The Book</h2>
               <p>
                 A small river named Duden flows by their place and supplies it
@@ -36,36 +40,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className={aboutStyle.about_counter}>
-        <div className={aboutStyle.about_counter_container}>
-          <div className={aboutStyle.about_counter_row}>
-            <div className={aboutStyle.about_counter_item}>
-              <div className={aboutStyle.about_counter_block}>
-                <strong>1,100</strong>
-                <p>Copies Sold</p>
-              </div>
-            </div>
-            <div className={aboutStyle.about_counter_item}>
-              <div className={aboutStyle.about_counter_block}>
-                <strong>1,200</strong>
-                <p>Copies Released</p>
-              </div>
-            </div>
-            <div className={aboutStyle.about_counter_item}>
-              <div className={aboutStyle.about_counter_block}>
-                <strong>340</strong>
-                <p>Cup of coffee</p>
-              </div>
-            </div>
-            <div className={aboutStyle.about_counter_item}>
-              <div className={aboutStyle.about_counter_block}>
-                <strong>12,000</strong>
-                <p>Happy Readers</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutCounter style={style}/>
     </>
   );
 };

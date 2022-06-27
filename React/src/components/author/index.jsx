@@ -1,50 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./author.module.css";
 
 const Author = () => {
+  const [author, setAuthor] = useState({
+    name:'Franklin Henderson',
+    description: ` A small river named Duden flows by their place and supplies it
+    with the necessary regelialia.`,
+    dob: `November 28, 1980`,
+    address: `San Francisco CA 97987 USA`,
+    zip: `1000`,
+    email:`franklinsample@gmail.com`,
+    phone: `+1-2234-5678-9-0`,
+    img:`./assets/images/author.webp`
+  })
   return (
     <>
       <section className={`${style.author} section`} id="author">
         <div className={style.author_container}>
           <div
             className={style.author_img}
-            style={{ backgroundImage: `url(./assets/images/author.webp)` }}
+            style={{ backgroundImage: `url(${author.img})` }}
           ></div>
           <div className={style.author_infomation}>
             <div className={style.author_infomation_container}>
               <p className={style.author_infomation_subheading}>
                 Know More About The Author
               </p>
-              <h2>Franklin Henderson</h2>
-              <p className={style.author_infomation_description}>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
-              </p>
+              <h2>{author.name}</h2>
+              <p className={style.author_infomation_description}>{author.description}</p>
               <table>
                 <tbody>
                   <tr>
                     <th>Name</th>
-                    <td>Franklin Henderson</td>
+                    <td>{author.name}</td>
                   </tr>
                   <tr>
                     <th>Date of birth</th>
-                    <td>November 28, 1980</td>
+                    <td>{author.dob}</td>
                   </tr>
                   <tr>
                     <th>Address</th>
-                    <td>San Francisco CA 97987 USA</td>
+                    <td>{author.address}</td>
                   </tr>
                   <tr>
                     <th>Zip code</th>
-                    <td>1000</td>
+                    <td>{author.zip}</td>
                   </tr>
                   <tr>
                     <th>Email</th>
-                    <td>franklinsample@gmail.com</td>
+                    <td>{author.email}</td>
                   </tr>
                   <tr>
                     <th>Phone</th>
-                    <td>+1-2234-5678-9-0</td>
+                    <td>{author.phone}0</td>
                   </tr>
                 </tbody>
               </table>

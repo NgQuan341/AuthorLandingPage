@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import headerStyle from './header.module.css';
+import style from './header.module.css';
 import HeaderMenuItem from "./HeaderMenuItem";
 
 const Header = () => {
@@ -63,16 +63,16 @@ const Header = () => {
     setItems(arr)
   }
   return (
-    <nav className={headerStyle.header} id='header'>
-      <div className={headerStyle.header_container}>
-        <a href="#" className={headerStyle.header_brand}>
+    <nav className={style.header} id='header'>
+      <div className={style.header_container}>
+        <a href="#" className={style.header_brand}>
           Author<span></span>
         </a>
-        <button className={headerStyle.menu_btn}>Menu</button>
-        <div className={headerStyle.header_menu}>
+        <button className={style.menu_btn}>Menu</button>
+        <div className={style.header_menu}>
           {
             items.map((item, index)=>(
-                <HeaderMenuItem key={index} item={item} style={headerStyle} setActiveItem={setActiveItem} />
+                <HeaderMenuItem key={index} item={item} style={style} setActiveItem={setActiveItem} />
               )
             )
           }

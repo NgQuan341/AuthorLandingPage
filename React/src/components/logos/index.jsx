@@ -1,37 +1,40 @@
-import React from "react";
-import logoStyle from './logos.module.css'
+import React, { useState } from "react";
+import LogoItem from "./LogoItem";
+import style from './logos.module.css'
 
 const Logos = () => {
+  const [logos, setLogos] = useState([
+    {
+      id:1,
+      img:`./assets/images/xpartner-1.webp`,
+      link:`#`
+    },
+    {
+      id:2,
+      img:`./assets/images/xpartner-2.webp`,
+      link:`#`
+    },
+    {
+      id:3,
+      img:`./assets/images/xpartner-3.webp`,
+      link:`#`
+    },
+    {
+      id:4,
+      img:`./assets/images/xpartner-4.webp`,
+      link:`#`
+    }
+  ])
   return (
     <>
-      <section className={logoStyle.logos}>
-        <div className={logoStyle.logos_container}>
-          <div className={logoStyle.logos_row}>
-            <div className={logoStyle.logos_item}>
-              <a href="" className={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-1.webp" alt="" />
-              </a>
-            </div>
-            <div className={logoStyle.logos_item}>
-              <a href="" className={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-2.webp" alt="" />
-              </a>
-            </div>
-            <div className={logoStyle.logos_item}>
-              <a href="" className={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-3.webp" alt="" />
-              </a>
-            </div>
-            <div className={logoStyle.logos_item}>
-              <a href="" className={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-4.webp" alt="" />
-              </a>
-            </div>
-            <div className={logoStyle.logos_item}>
-              <a href="" className={logoStyle.logos_link}>
-                <img src="./assets/images/xpartner-5.webp" alt="" />
-              </a>
-            </div>
+      <section className={style.logos}>
+        <div className={style.logos_container}>
+          <div className={style.logos_row}>
+           {
+             logos.map(logo=>(
+               <LogoItem key={logo.id} logo={logo} style = {style} />
+             ))
+           }
           </div>
         </div>
       </section>
