@@ -159,10 +159,10 @@
     width: 690px;
     margin: 0px auto;
   }
-  .testimonial_slide_block {
+  /* .testimonial_slide_block {
     min-width: 315px;
     transform: translateX(calc(-345px / 2));
-  }
+  } */
 }
 @media screen and (max-width: 767px) {
   .testimonial_container {
@@ -174,7 +174,7 @@
   }
   .testimonial_slide_block {
     min-width: 240px;
-    transform: translateX(calc(-270px / 2));
+    /* transform: translateX(calc(-270px / 2)); */
   }
 }
 @media screen and (max-width: 590px) {
