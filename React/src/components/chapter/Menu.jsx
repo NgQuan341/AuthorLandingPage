@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import useActiveMenuScoll from '../../hook/useActiveMenuScoll'
 
 const Menu = (props) => {
     const {style} = props
@@ -36,12 +37,18 @@ const Menu = (props) => {
             active: false,
         }, 
       ]
+    const handleMenuScroll = () =>{
+        useActiveMenuScoll(style, `chapter`)
+    }
+    useEffect(()=>{
+        handleMenuScroll()
+    },[])
   return (
     <div className={style.chapter_menu}>
         <ul>
             {
                 items.map((item,index)=>(
-                    <li key={index}><a href=""  className={item.active?style.current:``}>{item.title}</a></li>
+                    <li key={index}><a href=""  className={item.active?style.active:``}>{item.title}</a></li>
                 ))
             }
         </ul>

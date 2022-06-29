@@ -33,7 +33,7 @@
   font-weight: 700;
   transition: all 0.2s linear;
 }
-.chapter_menu ul li a.current::after {
+.chapter_menu ul li a.active::after {
   position: absolute;
   top: 50%;
   left: -24px;
@@ -43,7 +43,7 @@
   transform: translateY(-50%);
   background: #17b978;
 }
-.chapter_menu ul li a.current {
+.chapter_menu ul li a.active {
   color: #17b978;
   margin-left: 20px;
   position: relative;

@@ -39,6 +39,30 @@ const Testimonial = () => {
       and Consonantia, there live the blind texts.`,
     },
   ]);
+  const splideConfig = {
+    type:'loop',
+    perPage: 3,
+    perMove: 1,
+    gap:`15px`,
+    autoplay: true,
+    arrows: false,
+    speed: 1500,
+    pauseOnHover: true,
+    breakpoints: {
+      992: {
+        perPage: 1,
+        padding:`172px`
+      },
+      768:{
+        perPage: 1,           
+      },
+      590:{
+        perPage: 1,
+        gap:`30px`,
+        padding:{right:'29px'}
+      }
+    }
+  }
   return (
     <>
       <section className={`${style.testimonial} section`} id="reviews">
@@ -51,30 +75,7 @@ const Testimonial = () => {
             <p>Testimonial</p>
             <h2>Kinds Words From Customers</h2>
           </div>
-            <Splide aria-label="Testimonial" options={{
-              type:'loop',
-              perPage: 3,
-              perMove: 1,
-              gap:`15px`,
-              autoplay: true,
-              arrows: false,
-              speed: 1500,
-              pauseOnHover: true,
-              breakpoints: {
-                992: {
-                  perPage: 1,
-                  padding:`172px`
-                },
-                768:{
-                  perPage: 1,           
-                },
-                590:{
-                  perPage: 1,
-                  gap:`30px`,
-                  padding:{right:'29px'}
-                }
-              }
-            }}>
+            <Splide aria-label="Testimonial" options={splideConfig}>
               {
                 slides.map((slide) => (
                   <SplideSlide key={slide.id}>

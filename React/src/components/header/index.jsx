@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import style from './header.module.css';
 import HeaderMenuItem from "./HeaderMenuItem";
+import useActiveMenuScoll from '../../hook/useActiveMenuScoll'
 
 const Header = () => {
   const menuItems = [
@@ -62,17 +63,41 @@ const Header = () => {
     )
     setItems(arr)
   }
+  const showMenu = () =>{
+    const menu = document.querySelector(`.${style.header_menu}`);
+    if (menu.style.maxHeight) {
+      menu.style.maxHeight = null;
+    } else {
+      menu.style.maxHeight = menu.scrollHeight + "px";
+    }
+  }
+  const fixedHeader = () =>{
+    window.addEventListener("scroll", function () {
+      if (window.scrollY >= 10) {
+        document.getElementById("header").classList.add(`${style.fixed}`);
+      } else {
+        document.getElementById("header").classList.remove(`${style.fixed}`);
+      }
+    });
+  }
+  const handleMenuScroll = () =>{
+    useActiveMenuScoll(style, `header`)
+  }
+  useEffect(()=>{
+    fixedHeader();
+    handleMenuScroll()
+  },[])
   return (
     <nav className={style.header} id='header'>
       <div className={style.header_container}>
         <a href="#" className={style.header_brand}>
           Author<span></span>
         </a>
-        <button className={style.menu_btn}>Menu</button>
+        <button className={style.menu_btn} onClick={()=>{showMenu()}}>Menu</button>
         <div className={style.header_menu}>
           {
             items.map((item, index)=>(
-                <HeaderMenuItem key={index} item={item} style={style} setActiveItem={setActiveItem} />
+                <HeaderMenuItem key={index} item={item} style={style} setActiveItem={setActiveItem}/>
               )
             )
           }
