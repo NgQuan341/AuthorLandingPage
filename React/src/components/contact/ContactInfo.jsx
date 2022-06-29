@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import style from './contactInfo.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot, faPhone, faPaperPlane, faEarthAsia } from '@fortawesome/free-solid-svg-icons'
 
 const ContactInfo = () => {
   const [contact, setContact] = useState({
@@ -23,7 +25,7 @@ const ContactInfo = () => {
           <div className={style.contact_box}>
             <div className={style.contact_block}>
               <div className={style.contact_block_icon}>
-                <i className="fa-solid fa-location-dot"></i>
+                <FontAwesomeIcon icon={faLocationDot} inverse />
               </div>
               <h3>Address</h3>
               <p>{contact.address}</p>
@@ -32,7 +34,7 @@ const ContactInfo = () => {
           <div className={style.contact_box}>
             <div className={style.contact_block}>
               <div className={style.contact_block_icon}>
-                <i className="fa-solid fa-phone"></i>
+                <FontAwesomeIcon icon={faPhone} inverse />
               </div>
               <h3>Contact Number</h3>
               <a href="">{contact.phone}</a>
@@ -41,7 +43,7 @@ const ContactInfo = () => {
           <div className={style.contact_box}>
             <div className={style.contact_block}>
               <div className={style.contact_block_icon}>
-                <i className="fa-solid fa-paper-plane"></i>
+                <FontAwesomeIcon icon={faPaperPlane} inverse />
               </div>
               <h3>Email Address</h3>
               <a href="">{contact.email}</a>
@@ -50,7 +52,7 @@ const ContactInfo = () => {
           <div className={style.contact_box}>
             <div className={style.contact_block}>
               <div className={style.contact_block_icon}>
-                <i className="fa-solid fa-earth-asia"></i>
+                <FontAwesomeIcon icon={faEarthAsia} inverse />
               </div>
               <h3>Website</h3>
               <a href={contact.website} target="_blank">{contact.website}</a>

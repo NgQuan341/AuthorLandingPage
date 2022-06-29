@@ -1,5 +1,9 @@
 import React from 'react'
 import style from './footer.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot, faPhone, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+
 const Footer = () => {
   return (
     <>
@@ -16,13 +20,13 @@ const Footer = () => {
               </div>
               <div className={style.footer_social_media}>
                 <div className={style.footer_social_media_btn}>
-                  <a href=""><i className="fa-brands fa-twitter"></i></a>
+                  <a href=""><FontAwesomeIcon icon={faTwitter} inverse /></a>
                 </div>
                 <div className={style.footer_social_media_btn}>
-                  <a href=""><i className="fa-brands fa-facebook"></i></a>
+                  <a href=""><FontAwesomeIcon icon={faFacebook} inverse /></a>
                 </div>
                 <div className={style.footer_social_media_btn}>
-                  <a href=""><i className="fa-brands fa-instagram"></i></a>
+                  <a href=""><FontAwesomeIcon icon={faInstagram} inverse /></a>
                 </div>
               </div>
             </div>
@@ -48,22 +52,22 @@ const Footer = () => {
               <div className={style.footer_column_text}>
                 <h2>Have a Questions?</h2>
                 <span>
-                  <p className={style.footer_social_media_icon}>
-                    <i className="fa-solid fa-location-dot"></i>
+                  <p className={style.footer_column_text_icon}>
+                    <FontAwesomeIcon icon={faLocationDot} inverse />
                   </p>
                   <p>
                     203 Fake St. Mountain View, San Francisco, California, USA
                   </p>
                 </span>
                 <span>
-                  <p className={style.footer_social_media_icon}>
-                    <i className="fa-solid fa-phone"></i>
+                  <p className={style.footer_column_text_icon}>
+                    <FontAwesomeIcon icon={faPhone} inverse />
                   </p>
                   <p>+2 392 3929 210</p>
                 </span>
                 <span>
-                  <p className={style.footer_social_media_icon}>
-                    <i className="fa-solid fa-paper-plane"></i>
+                  <p className={style.footer_column_text_icon}>
+                    <FontAwesomeIcon icon={faPaperPlane} inverse />
                   </p>
                   <p>info@yourdomain.com</p>
                 </span>

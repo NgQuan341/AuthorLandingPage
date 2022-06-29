@@ -1,11 +1,13 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 
 const SlideItem = (props) => {
   const { style, slide } = props;
   return (
     <div className={style.testimonial_slide_block}>
       <div className={style.testimonial_slide_icon}>
-        <i className="fa fa-quote-left"></i>
+        <FontAwesomeIcon icon={faQuoteLeft} />
       </div>
       <div className={style.testimonial_slide_description}>{slide.description}</div>
       <div className={style.testimonial_slide_row}>
