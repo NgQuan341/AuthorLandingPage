@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./author.module.css";
 
 const Author = () => {
-  const [author, setAuthor] = useState({
-    name:'Franklin Henderson',
-    description: ` A small river named Duden flows by their place and supplies it
-    with the necessary regelialia.`,
-    dob: `November 28, 1980`,
-    address: `San Francisco CA 97987 USA`,
-    zip: `1000`,
-    email:`franklinsample@gmail.com`,
-    phone: `+1-2234-5678-9-0`,
-    img:`./assets/images/author.webp`
-  })
+  const [author, setAuthor] = useState({})
+  const getAuthor = () => {
+    fetch(`${import.meta.env.VITE_GOOGLE_API}author.json`)
+      .then((response) => response.json())
+      .then((data) => setAuthor(data));
+  };
+  useEffect(()=>{
+    getAuthor()
+  },[])
   return (
     <>
       <section className={`${style.author} section`} id="author">

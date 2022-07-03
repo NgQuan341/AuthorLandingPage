@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from './banner.module.css';
 
 const Banner = () => {
-  const [bestSeller, setBestSeller] = useState({
-    name:`Clue Of The Wooden Cottage`,
-    description:`A small river named Duden flows by their place and supplies it with
-    the necessary regelialia. It is a paradisematic country, in which
-    roasted parts of sentences fly into your mouth.`,
-    price:`$100`,
-    imgBanner: `./assets/images/book_lover.svg`
-  })
+  const [bestSeller, setBestSeller] = useState({})
+  const getBestSeller = () => {
+    fetch(`${import.meta.env.VITE_GOOGLE_API}bestSeller.json`)
+      .then((response) => response.json())
+      .then((data) => setBestSeller(data));
+  };
+  useEffect(()=>{
+    getBestSeller()
+  },[])
   return (
     <>
       <section className={`${style.banner} section`}>
@@ -25,7 +26,7 @@ const Banner = () => {
         </div>
         <div className={style.banner_blank}></div>
         <div className={style.banner_img}>
-          <img src={bestSeller.imgBanner} alt="" />
+          <img src={`https://firebasestorage.googleapis.com/v0/b/author-api.appspot.com/o/book_lover.svg?alt=media&token=e4a5fb01-ec4c-44af-8508-99d6ec47b2be`} alt="" />
         </div>
       </section>
     </>

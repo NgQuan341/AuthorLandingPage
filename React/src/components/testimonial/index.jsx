@@ -8,7 +8,7 @@ const Testimonial = () => {
   const [slides, setSlides] = useState([
     {
       id: 1,
-      img: `./assets/images/person1.webp`,
+      img: `https://firebasestorage.googleapis.com/v0/b/author-api.appspot.com/o/person1.webp?alt=media&token=0eec7ed6-cd0f-46d7-b5a1-04e83d25c3d4`,
       name: `Roger Scott`,
       position: `Marketing Manager`,
       description: `Far far away, behind the word mountains, far from the countries Vokalia
@@ -16,7 +16,7 @@ const Testimonial = () => {
     },
     {
       id: 2,
-      img: `./assets/images/person2.webp`,
+      img: `https://firebasestorage.googleapis.com/v0/b/author-api.appspot.com/o/person2.webp?alt=media&token=b6590040-8828-45dc-9035-5e0568f8c3a3`,
       name: `Roger Scott`,
       position: `Marketing Manager`,
       description: `Far far away, behind the word mountains, far from the countries Vokalia
@@ -24,7 +24,7 @@ const Testimonial = () => {
     },
     {
       id: 3,
-      img: `./assets/images/person3.webp`,
+      img: `https://firebasestorage.googleapis.com/v0/b/author-api.appspot.com/o/person3.webp?alt=media&token=4c6a739f-54a5-4fd1-ac40-2f0c1b1a7fa6`,
       name: `Roger Scott`,
       position: `Marketing Manager`,
       description: `Far far away, behind the word mountains, far from the countries Vokalia
@@ -32,7 +32,7 @@ const Testimonial = () => {
     },
     {
       id: 4,
-      img: `./assets/images/person1.webp`,
+      img: `https://firebasestorage.googleapis.com/v0/b/author-api.appspot.com/o/person2.webp?alt=media&token=b6590040-8828-45dc-9035-5e0568f8c3a3`,
       name: `Roger Scott`,
       position: `Marketing Manager`,
       description: `Far far away, behind the word mountains, far from the countries Vokalia
@@ -68,7 +68,7 @@ const Testimonial = () => {
       <section className={`${style.testimonial} section`} id="reviews">
         <div
           className={style.testimonial_img}
-          style={{ backgroundImage: `url(./assets/images/testimonial.webp)` }}
+          style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/author-api.appspot.com/o/testimonial.webp?alt=media&token=bba33bed-5d69-4647-8a59-f7a6ee24a3c7)` }}
         ></div>
         <div className={style.testimonial_container}>
           <div className={style.testimonial_text}>

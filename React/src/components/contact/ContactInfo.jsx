@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from './contactInfo.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faPhone, faPaperPlane, faEarthAsia } from '@fortawesome/free-solid-svg-icons'
 
 const ContactInfo = () => {
-  const [contact, setContact] = useState({
-    description:`Far far away, behind the word mountains, far from the countries
-    Vokalia and Consonantia`,
-    address:`198 West 21th Street, Suite 721 New York NY 10016`,
-    phone:`012356789`,
-    email:`quanguyen@gmail.com`,
-    website:`https://author-landingpage.netlify.app/`
-  })
+  const [contact, setContact] = useState({})
+  const getContact = () => {
+    fetch(`${import.meta.env.VITE_GOOGLE_API}contactInfo.json`)
+      .then((response) => response.json())
+      .then((data) => setContact(data));
+  };
+  useEffect(()=>{
+    getContact()
+  },[])
   return (
     <>
       <section className={`${style.contact} section`} id="contact">

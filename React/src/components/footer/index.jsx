@@ -1,10 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import style from './footer.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faPhone, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
+  const [contact, setContact] = useState({})
+  const getContact = () => {
+    fetch(`${import.meta.env.VITE_GOOGLE_API}contactInfo.json`)
+      .then((response) => response.json())
+      .then((data) => setContact(data));
+  };
+  useEffect(()=>{
+    getContact()
+  },[])
   return (
     <>
     <footer className={style.footer}>
@@ -14,8 +23,7 @@ const Footer = () => {
               <div className={style.footer_column_text}>
                 <h2>About</h2>
                 <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind texts.
+                  {contact.description}
                 </p>
               </div>
               <div className={style.footer_social_media}>
@@ -56,20 +64,20 @@ const Footer = () => {
                     <FontAwesomeIcon icon={faLocationDot} inverse />
                   </p>
                   <p>
-                    203 Fake St. Mountain View, San Francisco, California, USA
+                    {contact.address}
                   </p>
                 </span>
                 <span>
                   <p className={style.footer_column_text_icon}>
                     <FontAwesomeIcon icon={faPhone} inverse />
                   </p>
-                  <p>+2 392 3929 210</p>
+                  <p>{contact.phone}</p>
                 </span>
                 <span>
                   <p className={style.footer_column_text_icon}>
                     <FontAwesomeIcon icon={faPaperPlane} inverse />
                   </p>
-                  <p>info@yourdomain.com</p>
+                  <p>{contact.email}</p>
                 </span>
               </div>
             </div>
